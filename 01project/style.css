@@ -1,0 +1,196 @@
+/* =========================
+   PAGE
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(139, 92, 246, 0.22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(234, 179, 8, 0.12),
+            transparent 30%
+        ),
+        #100e17;
+
+    color: #f8f5ee;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+#first {
+    width: 85%;
+    max-width: 650px;
+
+    padding: 65px 50px;
+
+    text-align: center;
+
+    background: rgba(30, 27, 42, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(139, 92, 246, 0.12);
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+#first:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 100px rgba(139, 92, 246, 0.18);
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+h1 {
+    margin: 0 0 45px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 38px;
+
+    line-height: 1.5;
+
+    font-weight: 400;
+
+    letter-spacing: 0.3px;
+
+    color: #f8f5ee;
+}
+
+
+/* Decorative quotation mark */
+
+h1::before {
+    content: "“";
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: 75px;
+
+    line-height: 45px;
+
+    color: #d4af37;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    display: block;
+
+    margin: 0 auto;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    border-radius: 50px;
+
+    background: #d4af37;
+
+    color: #17140c;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(212, 175, 55, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+button:hover {
+    background: #e5c158;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(212, 175, 55, 0.35);
+}
+
+
+/* =========================
+   BUTTON CLICK
+========================= */
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #first {
+        width: 78%;
+
+        padding: 45px 25px;
+
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    button {
+        padding: 12px 23px;
+
+        font-size: 14px;
+    }
+}

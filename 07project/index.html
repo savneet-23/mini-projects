@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="#" method="post" id="astroform">
+
+    <label for="name">Full Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        required
+    >
+
+    <label for="dob">Date of Birth</label>
+    <input
+        type="date"
+        id="dob"
+        name="dob"
+        required
+    >
+
+    <label for="tob">Time of Birth</label>
+    <input
+        type="time"
+        id="tob"
+        name="tob"
+        required
+    >
+
+    <label for="place">Place of Birth</label>
+    <input
+        type="text"
+        id="place"
+        name="place"
+        placeholder="Enter city / country"
+        required
+    >
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+        <option value="prefer-not">Prefer not to say</option>
+    </select>
+
+    <button type="submit" id="generateBtn">
+        ✨ Generate Horoscope
+    </button>
+
+</form>
+
+<!-- Horoscope will appear here -->
+<div id="result"></div>
+</body>
+<script src="first.js"></script>
+</html>
