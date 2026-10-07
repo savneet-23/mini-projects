@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color:black;color:white;font-size:20 px;display:flex;justify-content:center;align-items:center;height:100vh">
+<body >
     <div id="parent">
+        <h1>Color Studio</h1>
+        <p style="color:brown; font-family: cursive ; font-weight: bolder; font-size:20px;">Choose a color to transform your canvas:</p>
      
-        <button id="red" style="background-color:red">Red</button>
+        <button id="red" class="color-btn" style="background-color:red">Red</button>
    
-         <button id="yellow" style="background-color:yellow">Yellow</button>
+         <button id="yellow" class="color-btn" style="background-color:rgb(219, 188, 31)">Yellow</button>
    
-          <button id="blue" style="background-color:blue">Blue</button>
+          <button id="blue"  class="color-btn" style="background-color:blue">Blue</button>
    
-           <button id="pink" style="background-color:pink">Pink</button>
+           <button id="pink"  class="color-btn" style="background-color:rgb(245, 64, 94)">Pink</button>
    
-            <button id="orange" style="background-color:orange">Orange</button>
+            <button id="orange"  class="color-btn" style="background-color:orange">Orange</button>
    
+              <p id="current-color">Current Color Chosen is:None</p>
     </div>
+
+  
     
 </body>
 <script src="./first.js"></script>
