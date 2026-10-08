@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb
+    );
+    color:#e70d7a;
+    padding:20x;
+}
+
+#parent{
+    width: 100%;
+    max-width:420px;
+    padding:40px 30px;
+    text-align:center;
+    border:3px solid rgba(24, 2, 2, 0.8);
+    border-radius:24px;
+    box-shadow:0 15px 40px rgba(139,35,75,0.2);
+    background:rgb(251, 236, 207);
+    backdrop-filter: blur(10px);
+}
+
+h1{
+    font-size:32px;
+    color:#660a29;
+    margin-bottom:30px;
+    text-transform:capitalize;
+
+}
+
+h1::before{
+    content:"♥ ";
+}
+
+h1::after{
+    content:"♥ ";
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+}
+
+label{
+    text-align:left;
+    font-size:16px;
+    font-weight:600;
+    color:#b5153d;
+    text-transform:capitalize;
+}
+
+input{
+    width:100%;
+    padding:13px 15px;
+    font-size:16px;
+    color:#4a1831;
+    background:#edb9cf;
+    border:2px solid #420b1f;
+    border-radius:12px;
+    outline:none;
+    transition:border-color 0.3s,box-shadow 0.3s;
+}
+
+input:focus{
+    border-color:#e63972;
+    box-shadow: 0 0 0 4px rgba(238,57,114,0.12);
+}
+
+h2{
+    margin-top:12px;
+    padding:16px 10px;
+    font-size:22px;
+    color:#1c1401;
+    background:#fed991;
+    border-radius:12px;
+    border:2px solid #a11040;
+    transition:border-color 0.3s,box-shadow 0.5s;
+}
+
+button{
+    width:100%;
+    padding:15px 12px;
+    margin-top:8px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ff4d88,#e6005c);
+    color:rgb(255, 255, 255);
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow: 0 6px 15px rgba(230,0,92,0.25);
+    transition: transform 0.2s,box-shadow 0.4s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(177, 21, 60, 0.715);
+}
+
+button:active{
+    transform:scale(0.97);
+}
+
+
+@media (max-width: 480px) {
+    #parent {
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
