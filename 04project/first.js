@@ -3,7 +3,13 @@ form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const income=document.querySelector("#income");
     const amount=parseInt(income.value);
-    const result=document.querySelector('h2');
+    const result=document.querySelector(".result-box h2");
+
+    if (income.value.trim() === "" || !Number.isFinite(amount) || amount < 0) {
+        result.textContent = "Enter a valid income";
+        return;
+    }
+
     let totaltax=0;
     if(amount<=1200000)
         totaltax=0;
@@ -16,6 +22,10 @@ form.addEventListener('submit',(e)=>{
     else
         totaltax=(amount-2400000)*0.30+60000+80000+100000;
 
-    result.textContent=`Total Tax: ${totaltax}`;
+    result.textContent = totaltax.toLocaleString("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 2
+    });
     form.reset();
 })
