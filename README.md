@@ -115,4 +115,25 @@ The calculator uses the following predefined income tax slabs:
 
 **Note:** These are the tax slabs implemented in this project for demonstration purposes. They are not a confirmation of the current Indian income tax rules and do not account for all applicable rebates, deductions, or other adjustments.
 
+
+# Project 05 Rosé — Vintage Live Clock
+
+A dreamy digital clock inspired by soft Pinterest aesthetics, vintage roses, blush pink, and warm cream tones.
+
+### ✧ Features
+- Live time display with seconds
+- Automatic date updates
+- Elegant arched clock container
+- Soft vintage colors and typography
+- Subtle animated film grain
+- Responsive design
+
+### ✧ Built With
+HTML · CSS · JavaScript
+
+### ♡ Run Locally
+Open `index.html` in your browser.
+
+Made with love 🌷
+
 More mini projects will be added to this repository as I continue learning and improving my web development skills.
