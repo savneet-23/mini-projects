@@ -1,16 +1,40 @@
-setInterval(()=>{const result=document.getElementById('result');
-const current=Date.now();
-const relatntime=new Date(2027,4,28).getTime();
-let timer=(relatntime-current);
-const day=Math.floor((timer)/(1000*60*60*24));
-timer%=1000*60*60*24;
-const hour=Math.floor((timer)/(1000*60*60));
-timer%=1000*60*60;
-const minute=Math.floor((timer)/(1000*60));
-timer%=1000*60;
-const second=Math.floor((timer)/(1000));
-timer%=1000;
 
-result.textContent=`${day}:Days ${hour}:Hours ${minute}:Minutes ${second}:seconds`},1000);
+const birthday = new Date(2027, 0, 23, 0, 0, 0).getTime();
 
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
+function updateCountdown() {
+  const remaining = birthday - Date.now();
+
+  if (remaining <= 0) {
+    daysEl.textContent = "00";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+
+    document.querySelector(".overline").textContent =
+      "HAPPY BIRTHDAY, SAVNEET ♡";
+
+    document.querySelector(".cake-script").textContent =
+      "It's your day!";
+
+    clearInterval(timerInterval);
+    return;
+  }
+
+  const days = Math.floor(remaining / 86400000);
+  const hours = Math.floor((remaining / 3600000) % 24);
+  const minutes = Math.floor((remaining / 60000) % 60);
+  const seconds = Math.floor((remaining / 1000) % 60);
+
+  daysEl.textContent = String(days).padStart(3, "0");
+  hoursEl.textContent = String(hours).padStart(2, "0");
+  minutesEl.textContent = String(minutes).padStart(2, "0");
+  secondsEl.textContent = String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+const timerInterval = setInterval(updateCountdown, 1000);
