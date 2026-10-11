@@ -135,5 +135,41 @@ HTML · CSS · JavaScript
 Open `index.html` in your browser.
 
 Made with love 🌷
+#  Project 06: 🎀 Savneet's Birthday Countdown
+
+A dreamy, pink-themed birthday countdown website created for Savneet's 19th birthday on February 23, 2027. 💗
+
+## ✨ Features
+
+- 🎂 Live countdown to the birthday
+- 🕯️ Aesthetic birthday cake with decorative candles
+- 💗 Soft pink and lavender gradients
+- ✨ Glowing effects and gentle animations
+- 🎀 Elegant typography and birthday decorations
+- 📱 Responsive design for mobile and desktop
+- 📸 Background photo collage (if configured)
+
+## 🛠️ Built With
+
+- HTML
+- CSS
+- JavaScript
+- Google Fonts — DM Sans and Playfair Display
+
+## 🚀 How to Run
+
+1. Clone or download this repository.
+2. Open the project folder.
+3. Open `index.html` in your browser.
+
+If you use the VS Code Live Server extension, you can also launch the website with **Open with Live Server**.
+
+## 🎨 Customization
+
+You can edit the HTML, CSS, and JavaScript files to customize the birthday message, colors, countdown, candles, and decorations.
+
+## 💝 Made With Love
+
+A little birthday surprise made with love, pastel colors, and lots of sparkle. ✨
 
 More mini projects will be added to this repository as I continue learning and improving my web development skills.
