@@ -1,0 +1,1744 @@
+
+/* ==========================================
+   CELESTIA — PREMIUM ASTROLOGY WEBSITE
+========================================== */
+
+:root {
+    --bg: #090b16;
+    --surface: #101323;
+    --surface-2: #15192c;
+    --gold: #e4c17a;
+    --gold-light: #f3dfac;
+    --purple: #b9a0ff;
+    --white: #f7f4ff;
+    --muted: #a4a6bd;
+    --border: rgba(220, 211, 255, 0.12);
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 35px;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+
+    color: var(--white);
+    background: var(--bg);
+
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 5px;
+}
+
+::selection {
+    color: #100d1a;
+    background: var(--gold);
+}
+
+/* ===== BACKGROUND LIGHT ===== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(1px 1px at 10% 15%, #ffffff88 50%, transparent),
+        radial-gradient(2px 2px at 75% 20%, #e4c17a99 50%, transparent),
+        radial-gradient(1px 1px at 45% 70%, #ffffff88 50%, transparent),
+        radial-gradient(2px 2px at 88% 62%, #b9a0ff88 50%, transparent),
+        radial-gradient(1px 1px at 23% 83%, #ffffff77 50%, transparent),
+        radial-gradient(1px 1px at 60% 45%, #ffffff88 50%, transparent);
+
+    background-size: 310px 310px;
+}
+
+.ambient {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ambient-one {
+    top: 300px;
+    left: -250px;
+    background: #8660ed;
+}
+
+.ambient-two {
+    top: 950px;
+    right: -260px;
+    background: #c69c58;
+}
+
+/* ===== NAVIGATION ===== */
+
+.navbar {
+    width: min(1180px, calc(100% - 64px));
+    min-height: 92px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.brand-symbol {
+    color: var(--gold);
+    font-size: 31px;
+}
+
+.brand-dot {
+    color: var(--gold);
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    color: #ded9ef;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link span {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: var(--gold-light);
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    width: min(1180px, calc(100% - 64px));
+    min-height: 590px;
+    margin: 0 auto;
+    padding: 100px 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.eyebrow,
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.eyebrow-line {
+    width: 25px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.75;
+}
+
+.hero h1 {
+    max-width: 720px;
+    margin-top: 25px;
+
+    font-family: var(--serif);
+    font-size: clamp(54px, 7vw, 88px);
+    font-weight: 500;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+.hero h1 span,
+.section-heading h2 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 510px;
+    margin-top: 25px;
+
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.95;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+    min-height: 55px;
+    margin-top: 32px;
+    padding: 0 22px;
+
+    color: #171321;
+    background: var(--gold);
+
+    border: 1px solid var(--gold-light);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero-cta span {
+    font-size: 19px;
+}
+
+.hero-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px #e4c17a20;
+}
+
+/* ===== ORBIT ILLUSTRATION ===== */
+
+.orbit-art {
+    position: absolute;
+    top: 85px;
+    right: 25px;
+
+    width: 390px;
+    height: 390px;
+
+    display: grid;
+    place-items: center;
+
+    pointer-events: none;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(228, 193, 122, 0.24);
+    border-radius: 50%;
+}
+
+.orbit-outer {
+    width: 100%;
+    height: 100%;
+    border-style: dashed;
+    animation: rotate-orbit 65s linear infinite;
+}
+
+.orbit-middle {
+    width: 77%;
+    height: 77%;
+    border-color: rgba(185, 160, 255, 0.3);
+}
+
+.orbit-inner {
+    width: 54%;
+    height: 54%;
+    border-color: rgba(228, 193, 122, 0.45);
+    box-shadow: 0 0 60px #b9a0ff0b;
+}
+
+.orbit-core {
+    width: 105px;
+    height: 105px;
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #e4c17a80;
+    border-radius: 50%;
+
+    color: var(--gold-light);
+    background:
+        radial-gradient(circle at 35% 30%, #6e5b8e, #211b36 70%);
+
+    box-shadow:
+        0 0 60px #b9a0ff1e,
+        inset 0 0 35px #e4c17a12;
+
+    font-size: 43px;
+    animation: float-core 5s ease-in-out infinite;
+}
+
+.orbit-star {
+    position: absolute;
+    color: var(--gold-light);
+}
+
+.star-one {
+    top: 16%;
+    right: 22%;
+    font-size: 28px;
+}
+
+.star-two {
+    bottom: 18%;
+    left: 17%;
+    font-size: 19px;
+}
+
+.star-three {
+    top: 48%;
+    right: 2%;
+    color: var(--purple);
+    font-size: 22px;
+}
+
+@keyframes rotate-orbit {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes float-core {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ===== HERO FOOTER LINE ===== */
+
+.hero-bottom {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 35px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: #82869e;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* ===== SHARED SECTION HEADING ===== */
+
+.form-section,
+.zodiac-section {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.form-section {
+    padding: 105px 0 95px;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-top: 14px;
+
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+}
+
+.section-heading > p {
+    max-width: 520px;
+    margin: 15px auto 0;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ===== FORM PANEL ===== */
+
+.astro-form {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 38px;
+
+    background: linear-gradient(
+        145deg,
+        #15192a,
+        #101322
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    box-shadow:
+        0 25px 80px #00000035,
+        inset 0 1px 0 #ffffff06;
+}
+
+.form-topline {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    padding-bottom: 27px;
+    border-bottom: 1px solid var(--border);
+}
+
+.step-number {
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #e4c17a50;
+    border-radius: 9px;
+
+    color: var(--gold);
+    background: #e4c17a0c;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-topline h3 {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.form-topline p {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.sparkle-icon {
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 29px;
+}
+
+/* ===== FORM GRID ===== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+
+    padding-top: 27px;
+}
+
+.field {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    color: #e9e5f4;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.optional-label {
+    display: inline-block;
+    margin-left: 5px;
+
+    color: #9993b0;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* ===== INPUTS ===== */
+
+.field input,
+.field select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+    padding: 0 15px;
+
+    border: 1px solid #34384e;
+    border-radius: 7px;
+
+    color: var(--white);
+    background: #0c0f1d;
+
+    font-family: var(--sans);
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.field input::placeholder {
+    color: #747991;
+    opacity: 1;
+}
+
+.field input[type="date"],
+.field input[type="time"] {
+    color-scheme: dark;
+}
+
+.field select {
+    cursor: pointer;
+}
+
+.field select option {
+    color: white;
+    background: #15192a;
+}
+
+.field input:hover,
+.field select:hover {
+    border-color: #62627b;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--gold);
+    background: #111528;
+    box-shadow: 0 0 0 3px #e4c17a14;
+}
+
+.field input:user-invalid,
+.field select:user-invalid {
+    border-color: #cf7777;
+}
+
+/* ===== PRIVACY NOTE ===== */
+
+.privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 25px;
+
+    color: #aaa7bc;
+    font-size: 12px;
+}
+
+.privacy-note span {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+
+#generateBtn {
+    width: 100%;
+    min-height: 57px;
+    margin-top: 24px;
+    padding: 14px 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid var(--gold-light);
+    border-radius: 7px;
+
+    color: #171321;
+    background: linear-gradient(110deg, #d9b66f, #f0d9a0);
+
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px #e4c17a13;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+#generateBtn > span:first-child {
+    font-size: 18px;
+}
+
+#generateBtn .button-arrow {
+    margin-left: auto;
+    font-size: 20px;
+}
+
+#generateBtn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 12px 30px #e4c17a25;
+}
+
+#generateBtn:active {
+    transform: translateY(0);
+}
+
+#generateBtn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.form-footnote {
+    margin-top: 15px;
+    color: #777c94;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* ===== RESULT SECTION ===== */
+
+.result-section {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto 100px;
+    scroll-margin-top: 30px;
+}
+
+.result-section[hidden] {
+    display: none;
+}
+
+.result-header {
+    position: relative;
+    overflow: hidden;
+
+    padding: 43px;
+    margin-bottom: 20px;
+
+    border: 1px solid #e4c17a45;
+    border-radius: 15px;
+
+    background:
+        radial-gradient(circle at 85% 15%, #b9a0ff18, transparent 35%),
+        linear-gradient(120deg, #19182c, #111423);
+}
+
+.result-header::after {
+    content: "✧";
+    position: absolute;
+    top: -30px;
+    right: 25px;
+
+    color: #e4c17a16;
+    font-size: 180px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+.result-eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.result-header h2 {
+    margin-top: 13px;
+
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 500;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.result-header h2 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.result-header p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.zodiac-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 27px;
+    padding: 13px 18px;
+
+    border: 1px solid #e4c17a40;
+    border-radius: 9px;
+
+    background: #e4c17a0b;
+}
+
+.zodiac-symbol {
+    color: var(--gold);
+    font-size: 34px;
+    line-height: 1;
+}
+
+.zodiac-badge small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.zodiac-badge strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--white);
+    font-size: 17px;
+}
+
+.reading-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.reading-card {
+    min-width: 0;
+    padding: 27px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: linear-gradient(145deg, #15192b, #101322);
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.reading-card:hover {
+    border-color: #e4c17a45;
+    transform: translateY(-2px);
+}
+
+.reading-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #b9a0ff35;
+    border-radius: 9px;
+
+    color: var(--gold);
+    background: #b9a0ff0c;
+
+    font-size: 21px;
+}
+
+.reading-card h3 {
+    margin-top: 20px;
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.reading-card p {
+    margin-top: 9px;
+    color: #b9bbce;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.result-note {
+    margin-top: 20px;
+    padding: 16px 19px;
+
+    border-left: 2px solid var(--gold);
+    background: #e4c17a09;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ===== ZODIAC SECTION ===== */
+
+.zodiac-section {
+    padding: 30px 0 105px;
+    border-top: 1px solid var(--border);
+}
+
+.zodiac-heading {
+    margin-top: 70px;
+}
+
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.zodiac-item {
+    min-height: 125px;
+    padding: 17px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: #ffffff03;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.zodiac-item > span {
+    color: var(--gold);
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.zodiac-item p {
+    color: #c8c5d8;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.zodiac-item:hover {
+    transform: translateY(-4px);
+    border-color: #e4c17a65;
+    background: #e4c17a09;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    width: 100%;
+    padding: 35px 24px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+
+    border-top: 1px solid var(--border);
+    background: #ffffff02;
+
+    text-align: center;
+}
+
+.footer-brand {
+    font-size: 24px;
+}
+
+.footer-brand .brand-symbol {
+    font-size: 26px;
+}
+
+.footer > p {
+    color: #b3b3c6;
+    font-size: 13px;
+}
+
+.footer-disclaimer {
+    max-width: 600px;
+    margin-top: 5px;
+
+    color: #777c91;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+
+@media (max-width: 900px) {
+    .orbit-art {
+        right: -25px;
+        width: 310px;
+        height: 310px;
+        opacity: 0.7;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 7vw, 68px);
+    }
+
+    .hero-description {
+        max-width: 440px;
+    }
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    .navbar {
+        width: calc(100% - 36px);
+        min-height: 73px;
+    }
+
+    .brand {
+        gap: 7px;
+        font-size: 24px;
+    }
+
+    .brand-symbol {
+        font-size: 26px;
+    }
+
+    .nav-link {
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .hero {
+        width: calc(100% - 40px);
+        min-height: auto;
+        padding: 78px 0 25px;
+    }
+
+    .eyebrow {
+        gap: 7px;
+        font-size: 9px;
+        letter-spacing: 1.8px;
+    }
+
+    .eyebrow-line {
+        width: 15px;
+    }
+
+    .hero h1 {
+        position: relative;
+        z-index: 1;
+
+        margin-top: 22px;
+
+        font-size: clamp(46px, 11vw, 63px);
+        letter-spacing: -2px;
+        line-height: 1.13;
+    }
+
+    .hero-description {
+        position: relative;
+        z-index: 1;
+
+        max-width: 100%;
+        margin-top: 20px;
+
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .hero-cta {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 26px;
+
+        font-size: 13px;
+    }
+
+    .orbit-art {
+        position: relative;
+        top: auto;
+        right: auto;
+
+        width: min(280px, 78vw);
+        height: min(280px, 78vw);
+
+        align-self: center;
+        margin: 35px 0 35px;
+        opacity: 0.9;
+    }
+
+    .orbit-core {
+        width: 80px;
+        height: 80px;
+        font-size: 33px;
+    }
+
+    .hero-bottom {
+        margin-top: 0;
+        padding-top: 22px;
+
+        flex-direction: column;
+        gap: 8px;
+
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .form-section,
+    .zodiac-section {
+        width: calc(100% - 36px);
+    }
+
+    .form-section {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-kicker {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+        margin-top: 12px;
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .section-heading > p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .astro-form {
+        padding: 24px 19px;
+        border-radius: 12px;
+    }
+
+    .form-topline {
+        gap: 12px;
+        padding-bottom: 22px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .form-topline h3 {
+        font-size: 20px;
+    }
+
+    .form-topline p {
+        font-size: 12px;
+    }
+
+    .sparkle-icon {
+        font-size: 23px;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding-top: 23px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .field label {
+        font-size: 13px;
+    }
+
+    .field input,
+    .field select {
+        height: 53px;
+        font-size: 14px;
+    }
+
+    .optional-label {
+        font-size: 10px;
+    }
+
+    .privacy-note {
+        align-items: flex-start;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    #generateBtn {
+        min-height: 55px;
+        font-size: 13px;
+    }
+
+    .form-footnote {
+        font-size: 10px;
+    }
+
+    .result-section {
+        width: calc(100% - 36px);
+        margin-bottom: 75px;
+    }
+
+    .result-header {
+        padding: 27px 22px;
+    }
+
+    .result-header h2 {
+        font-size: 35px;
+    }
+
+    .result-header::after {
+        right: 4px;
+        font-size: 120px;
+    }
+
+    .result-header p {
+        font-size: 13px;
+    }
+
+    .reading-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .reading-card {
+        padding: 23px;
+    }
+
+    .reading-card h3 {
+        font-size: 22px;
+    }
+
+    .reading-card p {
+        font-size: 14px;
+    }
+
+    .zodiac-section {
+        padding: 20px 0 75px;
+    }
+
+    .zodiac-heading {
+        margin-top: 50px;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .zodiac-item {
+        min-height: 105px;
+        gap: 6px;
+    }
+
+    .zodiac-item > span {
+        font-size: 30px;
+    }
+
+    .zodiac-item p {
+        font-size: 11px;
+    }
+
+    .footer {
+        padding: 30px 22px;
+    }
+}
+
+/* ===== SMALL PHONES ===== */
+
+@media (max-width: 360px) {
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .astro-form {
+        padding: 20px 15px;
+    }
+
+    .form-topline h3 {
+        font-size: 18px;
+    }
+
+    .zodiac-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* ==========================================
+   CELESTIA — LARGE & READABLE TYPOGRAPHY
+   Paste at the VERY BOTTOM of style.css
+========================================== */
+
+/* Base typography */
+body {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Navigation */
+.brand {
+    font-size: 32px;
+}
+
+.brand-symbol {
+    font-size: 36px;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+/* Hero section */
+.hero {
+    min-height: 650px;
+    padding-top: 110px;
+}
+
+.hero h1 {
+    font-size: clamp(64px, 7.5vw, 100px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 570px;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.hero-cta {
+    min-height: 64px;
+    padding: 0 28px;
+    font-size: 17px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.hero-bottom {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Section headings */
+.section-heading h2 {
+    font-size: clamp(42px, 5vw, 60px);
+    line-height: 1.3;
+}
+
+.section-heading > p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.section-kicker {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+}
+
+/* Form panel */
+.astro-form {
+    max-width: 780px;
+    padding: 44px;
+}
+
+.form-topline h3 {
+    font-size: 27px;
+}
+
+.form-topline p {
+    font-size: 16px;
+}
+
+.step-number {
+    width: 54px;
+    height: 54px;
+    font-size: 16px;
+}
+
+.form-grid {
+    gap: 26px 24px;
+    padding-top: 32px;
+}
+
+.field {
+    gap: 11px;
+}
+
+.field label {
+    font-size: 17px;
+}
+
+.optional-label {
+    font-size: 13px;
+}
+
+.field input,
+.field select {
+    height: 62px;
+    padding: 0 18px;
+    font-size: 17px;
+}
+
+.field input::placeholder {
+    font-size: 16px;
+}
+
+.privacy-note {
+    margin-top: 28px;
+    font-size: 15px;
+}
+
+#generateBtn {
+    min-height: 66px;
+    margin-top: 28px;
+    font-size: 17px;
+}
+
+.form-footnote {
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+/* Horoscope results */
+.result-header {
+    padding: 50px;
+}
+
+.result-eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.result-header h2 {
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.3;
+}
+
+.result-header > p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.zodiac-badge {
+    padding: 17px 22px;
+    gap: 17px;
+}
+
+.zodiac-symbol {
+    font-size: 42px;
+}
+
+.zodiac-badge small {
+    font-size: 12px;
+}
+
+.zodiac-badge strong {
+    font-size: 20px;
+}
+
+.reading-grid {
+    gap: 22px;
+}
+
+.reading-card {
+    padding: 32px;
+}
+
+.reading-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 25px;
+}
+
+.reading-card h3 {
+    margin-top: 22px;
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+.reading-card p {
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 2;
+}
+
+.result-note {
+    padding: 20px 24px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Zodiac section */
+.zodiac-item {
+    min-height: 145px;
+    gap: 12px;
+}
+
+.zodiac-item > span {
+    font-size: 42px;
+}
+
+.zodiac-item p {
+    font-size: 15px;
+}
+
+/* Footer */
+.footer-brand {
+    font-size: 28px;
+}
+
+.footer > p {
+    font-size: 15px;
+}
+
+.footer-disclaimer {
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 8vw, 78px);
+    }
+
+    .hero-description {
+        max-width: 480px;
+        font-size: 18px;
+    }
+
+    .orbit-art {
+        width: 290px;
+        height: 290px;
+    }
+
+    .zodiac-item > span {
+        font-size: 38px;
+    }
+}
+
+/* ==========================================
+   MOBILE — READABLE WITHOUT OVERFLOW
+========================================== */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .navbar {
+        min-height: 76px;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .brand-symbol {
+        font-size: 29px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 65px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 10.5vw, 60px);
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .hero-cta {
+        min-height: 60px;
+        font-size: 15px;
+    }
+
+    .hero-bottom {
+        font-size: 10px;
+    }
+
+    .form-section {
+        padding: 65px 0;
+    }
+
+    .section-kicker {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(34px, 8vw, 43px);
+        line-height: 1.3;
+    }
+
+    .section-heading > p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .astro-form {
+        padding: 24px 18px;
+    }
+
+    .form-topline h3 {
+        font-size: 21px;
+    }
+
+    .form-topline p {
+        font-size: 14px;
+    }
+
+    .field label {
+        font-size: 15px;
+    }
+
+    .optional-label {
+        font-size: 11px;
+    }
+
+    .field input,
+    .field select {
+        height: 58px;
+        font-size: 16px;
+    }
+
+    .field input::placeholder {
+        font-size: 15px;
+    }
+
+    .privacy-note {
+        font-size: 13px;
+    }
+
+    #generateBtn {
+        min-height: 61px;
+        font-size: 15px;
+    }
+
+    .form-footnote {
+        font-size: 12px;
+    }
+
+    .result-header {
+        padding: 28px 22px;
+    }
+
+    .result-eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .result-header h2 {
+        font-size: clamp(32px, 8vw, 42px);
+        overflow-wrap: anywhere;
+    }
+
+    .result-header > p {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .zodiac-symbol {
+        font-size: 37px;
+    }
+
+    .zodiac-badge small {
+        font-size: 11px;
+    }
+
+    .zodiac-badge strong {
+        font-size: 18px;
+    }
+
+    .reading-card {
+        padding: 25px 22px;
+    }
+
+    .reading-icon {
+        width: 47px;
+        height: 47px;
+        font-size: 23px;
+    }
+
+    .reading-card h3 {
+        font-size: 25px;
+    }
+
+    .reading-card p {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .result-note {
+        padding: 17px;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .zodiac-item {
+        min-height: 112px;
+    }
+
+    .zodiac-item > span {
+        font-size: 34px;
+    }
+
+    .zodiac-item p {
+        font-size: 13px;
+    }
+
+    .footer > p {
+        font-size: 14px;
+    }
+
+    .footer-disclaimer {
+        font-size: 12px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .astro-form {
+        padding: 20px 15px;
+    }
+
+    .reading-card h3 {
+        font-size: 23px;
+    }
+}
+

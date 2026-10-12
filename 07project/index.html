@@ -1,65 +1,270 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta name="theme-color" content="#090b16">
+    <meta name="description" content="Explore your zodiac sign and discover a personalized astrology-inspired reading.">
+
+    <title>Celestia — Your Cosmic Journey</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="first.js" defer></script>
 </head>
+
 <body>
-    
-<form action="#" method="post" id="astroform">
 
-    <label for="name">Full Name</label>
-    <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Enter your full name"
-        required
-    >
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
 
-    <label for="dob">Date of Birth</label>
-    <input
-        type="date"
-        id="dob"
-        name="dob"
-        required
-    >
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="brand" aria-label="Celestia home">
+            <span class="brand-symbol">✳</span>
+            <span>celestia<span class="brand-dot">.</span></span>
+        </a>
 
-    <label for="tob">Time of Birth</label>
-    <input
-        type="time"
-        id="tob"
-        name="tob"
-        required
-    >
+        <a href="#birth-form" class="nav-link">
+            Explore your stars <span>↗</span>
+        </a>
+    </header>
 
-    <label for="place">Place of Birth</label>
-    <input
-        type="text"
-        id="place"
-        name="place"
-        placeholder="Enter city / country"
-        required
-    >
+    <main>
 
-    <label for="gender">Gender</label>
-    <select id="gender" name="gender" required>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-        <option value="prefer-not">Prefer not to say</option>
-    </select>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="eyebrow">
+                <span class="eyebrow-line"></span>
+                YOUR UNIVERSE, YOUR STORY
+                <span class="eyebrow-line"></span>
+            </div>
 
-    <button type="submit" id="generateBtn">
-        ✨ Generate Horoscope
-    </button>
+            <h1>
+                Written in the <br>
+                <span>stars above.</span>
+            </h1>
 
-</form>
+            <p class="hero-description">
+                Every birth tells a story. Discover your zodiac sign,
+                explore your strengths, and find a little cosmic
+                inspiration for the journey ahead.
+            </p>
 
-<!-- Horoscope will appear here -->
-<div id="result"></div>
+            <a href="#birth-form" class="hero-cta">
+                Discover your horoscope
+                <span>↓</span>
+            </a>
+
+            <div class="orbit-art" aria-hidden="true">
+                <div class="orbit orbit-outer"></div>
+                <div class="orbit orbit-middle"></div>
+                <div class="orbit orbit-inner"></div>
+                <div class="orbit-core">✦</div>
+                <span class="orbit-star star-one">✧</span>
+                <span class="orbit-star star-two">✦</span>
+                <span class="orbit-star star-three">✧</span>
+            </div>
+
+            <div class="hero-bottom">
+                <span>✦ &nbsp; YOUR BIRTH. YOUR COSMOS.</span>
+                <span>AN ASTROLOGY-INSPIRED EXPERIENCE</span>
+            </div>
+        </section>
+
+        <!-- Birth Details Form -->
+        <section class="form-section" id="birth-form">
+
+            <div class="section-heading">
+                <span class="section-kicker">THE FIRST CHAPTER</span>
+                <h2>Let's map your <span>stars.</span></h2>
+                <p>
+                    Enter your birth details to begin your
+                    personalized cosmic reading.
+                </p>
+            </div>
+
+            <form id="astroform" class="astro-form">
+
+                <div class="form-topline">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h3>Your birth details</h3>
+                        <p>Tell us a little about yourself</p>
+                    </div>
+                    <span class="sparkle-icon">✧</span>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+                        <label for="name">Full name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="dob">Date of birth</label>
+                        <input
+                            type="date"
+                            id="dob"
+                            name="dob"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="tob">
+                            Time of birth
+                            <span class="optional-label">For your reading</span>
+                        </label>
+                        <input
+                            type="time"
+                            id="tob"
+                            name="tob"
+                            required
+                        >
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="place">Place of birth</label>
+                        <input
+                            type="text"
+                            id="place"
+                            name="place"
+                            placeholder="e.g. Srinagar, India"
+                            autocomplete="off"
+                            maxlength="120"
+                            required
+                        >
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Choose an option</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer-not">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="privacy-note">
+                    <span>✧</span>
+                    Your details stay in this browser in this demo.
+                </div>
+
+                <button type="submit" id="generateBtn">
+                    <span>✦</span>
+                    Reveal my horoscope
+                    <span class="button-arrow">↗</span>
+                </button>
+
+                <p class="form-footnote">
+                    A moment of reflection, inspired by astrology.
+                </p>
+
+            </form>
+        </section>
+
+        <!-- Result Section -->
+        <section
+            id="result"
+            class="result-section"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+        >
+        </section>
+
+        <!-- Zodiac Signs -->
+        <section class="zodiac-section">
+
+            <div class="section-heading zodiac-heading">
+                <span class="section-kicker">THE CELESTIAL CIRCLE</span>
+                <h2>Twelve signs. <span>Infinite stories.</span></h2>
+                <p>
+                    Every sign carries its own symbolism,
+                    character, and place in the zodiac.
+                </p>
+            </div>
+
+            <div class="zodiac-grid">
+
+                <div class="zodiac-item">
+                    <span>♈</span><p>Aries</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♉</span><p>Taurus</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♊</span><p>Gemini</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♋</span><p>Cancer</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♌</span><p>Leo</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♍</span><p>Virgo</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♎</span><p>Libra</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♏</span><p>Scorpio</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♐</span><p>Sagittarius</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♑</span><p>Capricorn</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♒</span><p>Aquarius</p>
+                </div>
+                <div class="zodiac-item">
+                    <span>♓</span><p>Pisces</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#" class="brand footer-brand">
+            <span class="brand-symbol">✳</span>
+            <span>celestia<span class="brand-dot">.</span></span>
+        </a>
+
+        <p>
+            Made for the curious souls looking up at the stars.
+        </p>
+
+        <span class="footer-disclaimer">
+            For entertainment and self-reflection.
+            Astrology is not a scientifically established predictive method.
+        </span>
+    </footer>
+
 </body>
-<script src="first.js"></script>
 </html>
