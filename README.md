@@ -171,5 +171,75 @@ You can edit the HTML, CSS, and JavaScript files to customize the birthday messa
 ## 💝 Made With Love
 
 A little birthday surprise made with love, pastel colors, and lots of sparkle. ✨
+# ✨Project 07 Celestia — Your Cosmic Guide
+
+Celestia is a horoscope website designed to bring astrology and cosmic insights into a simple, elegant, and user-friendly experience. Explore the world of zodiac signs through a celestial-inspired interface.
+
+## 🌙 Features
+
+- ♈ **Zodiac Signs** — Explore the twelve zodiac signs.
+- 🔮 **Horoscope Experience** — Discover astrology-inspired insights.
+- 🌌 **Celestial Design** — A visually appealing interface inspired by the cosmos.
+- 📱 **Responsive Layout** — Designed with usability across different screen sizes in mind.
+- ⚡ **Interactive Experience** — JavaScript-powered functionality for a more engaging website.
+
+## 🛠️ Built With
+
+- **HTML5** — Website structure
+- **CSS3** — Styling and layout
+- **JavaScript** — Interactivity and functionality
+
+## 📂 Project Structure
+
+```text
+07project/
+├── index.html
+├── style.css
+├── first.js
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+Replace `YOUR_REPOSITORY_URL` with your GitHub repository URL.
+
+### 2. Navigate to the project folder
+
+```bash
+cd 07project
+```
+
+### 3. Run the website
+
+Open `index.html` in your web browser.
+
+For a smoother development experience, you can use the **Live Server** extension in Visual Studio Code.
+
+## 🎯 Project Goal
+
+The goal of Celestia is to create an engaging, accessible, and visually appealing astrology-themed website using fundamental web development technologies.
+
+## 🔮 Future Improvements
+
+- Daily horoscope updates
+- Dedicated pages for each zodiac sign
+- Zodiac compatibility insights
+- Improved mobile experience
+- Additional celestial animations and visual effects
+
+## 👨‍💻 Author - Savneet
+
+Created with ✨ and curiosity.
+
+---
+
+*Look to the stars. Explore your universe. Welcome to Celestia.* 🌠
+
 
 More mini projects will be added to this repository as I continue learning and improving my web development skills.
