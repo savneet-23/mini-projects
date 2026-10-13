@@ -241,5 +241,69 @@ Created with ✨ and curiosity.
 
 *Look to the stars. Explore your universe. Welcome to Celestia.* 🌠
 
+# 🌌 Project 08 Midnight Aurora — Clicker Project
+
+A beautiful, interactive clicker experience inspired by the colors of the midnight sky and the glow of the aurora. Every click creates a soft, colorful ripple, turning a simple interaction into a relaxing visual experience.
+
+## ✨ Features
+
+- **Interactive Click Effects** — Click the playground to create glowing ripple effects.
+- **Pastel Color Palette** — Enjoy a rotating selection of soft lavender, blue, pink, mint, yellow, and periwinkle colors.
+- **Smooth Animations** — Animated ripples add movement and visual feedback.
+- **Live Click Counter** — Keep track of your interactions.
+- **Reset Button** — Clear the playground and start again.
+
+## 🛠️ Built With
+
+- **HTML5** — Website structure
+- **CSS3** — Styling, gradients, animations, and custom properties
+- **JavaScript** — Click events, ripple creation, counter updates, and reset functionality
+- **Google Fonts** — DM Sans and Space Grotesk
+
+## 📁 Project Structure
+
+```text
+poject08/
+├── index.html
+├── style.css
+├── first.js
+└── README.md
+```
+
+## 🚀 Getting Started
+
+1. Clone or download this repository.
+2. Open the `poject08` folder.
+3. Open `index.html` in your browser.
+
+No additional dependencies or installation steps are required.
+
+## 🎮 How to Use
+
+1. Open the webpage.
+2. Click anywhere inside the playground.
+3. Watch colorful ripples appear with each click.
+4. Keep clicking to explore the different colors and effects.
+5. Click **Reset** to clear the playground and restart the counter.
+
+## 📚 What I Learned
+
+Through this project, I practiced:
+
+- Selecting HTML elements with JavaScript using `document.querySelector()`.
+- Handling user interactions with `addEventListener()`.
+- Creating and adding elements dynamically with `document.createElement()`.
+- Styling elements using CSS classes and custom properties.
+- Using CSS animations, opacity, shadows, and gradients.
+- Updating the webpage dynamically through DOM manipulation.
+- Connecting HTML, CSS, and JavaScript in an interactive project.
+
+## 🎨 Design Inspiration
+
+Midnight Aurora combines a deep midnight color palette with soft pastel ripples to create a minimal, calming, and interactive visual experience.
+
+---
+
+**Made with 💜 using HTML, CSS, and JavaScript.**
 
 More mini projects will be added to this repository as I continue learning and improving my web development skills.
