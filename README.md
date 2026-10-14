@@ -305,5 +305,58 @@ Midnight Aurora combines a deep midnight color palette with soft pastel ripples 
 ---
 
 **Made with 💜 using HTML, CSS, and JavaScript.**
+# 📝 Project 09: To-Do List App
+
+A simple and interactive to-do list web app built with HTML, CSS, and JavaScript.
+
+## ✨ Features
+
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- Prevent empty tasks from being added
+- Simple and colorful user interface
+
+## 🛠️ Technologies Used
+
+- HTML — project structure
+- CSS — styling and layout
+- JavaScript — task management and DOM manipulation
+
+## 🚀 How to Run
+
+1. Clone or download this repository.
+2. Open the project folder in VS Code.
+3. Open `index.html` in your browser.
+
+## 📁 Project Structure
+
+```text
+todo-list/
+├── index.html
+├── style.css
+├── first.js
+└── README.md
+```
+
+## 📚 What I Learned
+
+- Handling form submission with JavaScript
+- Selecting and creating DOM elements
+- Using event listeners
+- Updating styles dynamically
+- Working with Git and GitHub
+
+## 🔮 Future Improvements
+
+- Save tasks using local storage
+- Add task editing
+- Add filters for completed and pending tasks
+- Improve mobile responsiveness
+
+---
+
+Made with ❤️ while learning web development.
+
 
 More mini projects will be added to this repository as I continue learning and improving my web development skills.
