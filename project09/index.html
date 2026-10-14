@@ -1,22 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to do list</title>
+
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color:brown;color:bisque; padding:5px;height:20px;width:100px;">
-    <h1>to do list</h1>
-    <form>
-        <input type="text" name="task" id="task">
-        <button type="submit">add</button>
-    </form>
-    <br>
-    <br>
-    
-    <div id="alltask"></div>
-    
+<body>
+
+    <main class="todo-container">
+
+        <header class="header">
+            <span class="eyebrow">YOUR DAILY SPACE ✨</span>
+            <h1>My To-Do List</h1>
+            <p>A little progress every day adds up.</p>
+        </header>
+
+        <form id="taskform" class="task-form">
+            <input
+                type="text"
+                name="task"
+                id="task"
+                placeholder="What would you like to do?"
+                autocomplete="off"
+                aria-label="New task"
+            >
+
+            <button type="submit" class="add-btn">
+                + Add
+            </button>
+        </form>
+
+        <section class="tasks-section">
+            <h2>Your tasks <span>🌼</span></h2>
+            <div id="alltask"></div>
+        </section>
+
+        <footer>
+            One thing at a time. You've got this! 💛
+        </footer>
+
+    </main>
+
+    <script src="first.js"></script>
+
 </body>
-<script src="first.js"></script>
 </html>

@@ -1,52 +1,61 @@
-const form=document.querySelector('form');
-const alltask=document.querySelector('#alltask');
-const input=document.querySelector('input');
 
-form.addEventListener('submit',(e)=>{
+const form = document.querySelector('#taskform');
+const alltask = document.querySelector('#alltask');
+const input = document.querySelector('#task');
+const heading = document.querySelector('.tasks-section h2');
+
+function updateCount() {
+    const total = alltask.children.length;
+    const completed = alltask.querySelectorAll(
+        '.task-text.completed'
+    ).length;
+
+    heading.innerHTML =
+        `Your tasks (${completed}/${total} done) <span>🌼</span>`;
+}
+
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const text=input.value.trim();
 
+    const text = input.value.trim();
 
-    if(text=="")
-        return ;
+    if (text === '') return;
 
+    const parent = document.createElement('div');
+    parent.classList.add('task-item');
 
-    const parent=document.createElement('div');
-    parent.style.margintop="20px";
-    parent.style.display="flex";
-    parent.style.gap="5px";
-    const task=document.createElement('span');
-    task.textContent=text;
-    const deletebutton=document.createElement('button');
-    deletebutton.textContent="delete";
-    deletebutton.style.width="50px";
-   
-    const donebutton=document.createElement('button');
-    donebutton.textContent="done";
-    donebutton.style.width="50px";
-   
+    const task = document.createElement('span');
+    task.classList.add('task-text');
+    task.textContent = text;
 
-    parent.append(task,deletebutton,donebutton);
+    const doneButton = document.createElement('button');
+    doneButton.textContent = 'Done';
+    doneButton.classList.add('task-btn', 'done-btn');
+    doneButton.type = 'button';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.classList.add('task-btn', 'delete-btn');
+    deleteButton.type = 'button';
+
+    parent.append(task, doneButton, deleteButton);
     alltask.append(parent);
 
-    deletebutton.addEventListener('click',(e)=>{
+    doneButton.addEventListener('click', () => {
+        const completed = task.classList.toggle('completed');
+
+        doneButton.textContent = completed ? 'Undo' : 'Done';
+
+        updateCount();
+    });
+
+    deleteButton.addEventListener('click', () => {
         parent.remove();
-    })
-
-    donebutton.addEventListener('click',(e)=>{
-        task.style.textDecoration='line-through';
-        task.style.backgroundColor='pink';
-        task.style.color='red';
-
-
-
-
-    })
+        updateCount();
+    });
 
     form.reset();
+    input.focus();
 
-
-    
-
-
-})
+    updateCount();
+});

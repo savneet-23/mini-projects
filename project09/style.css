@@ -1,0 +1,465 @@
+
+/* ---------- Overall page ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 50px 20px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #e7532b;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffcfaa 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #c65d45,
+            #e98b70 50%,
+            #f5b89b
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* ---------- Main card ---------- */
+
+.todo-container {
+    width: 100%;
+    max-width: 540px;
+    padding: 36px;
+
+    background: #fff9f2;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 26px;
+
+    box-shadow: 0 20px 55px rgba(87, 40, 28, 0.22);
+}
+
+
+/* ---------- Header ---------- */
+
+.header {
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #bd644d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.header h1 {
+    margin: 12px 0 8px;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 750;
+    letter-spacing: -1.5px;
+}
+
+.header p {
+    margin: 0;
+    color: #99796d;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* ---------- Input form ---------- */
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.task-form input {
+    min-width: 0;
+    flex: 1;
+
+    padding: 14px 16px;
+    border: 1.5px solid #efdfd2;
+    border-radius: 13px;
+
+    background: #ffffff;
+    color: #59382f;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-form input::placeholder {
+    color: #8a2d08;
+}
+
+.task-form input:focus {
+    border-color: #c65d45;
+    box-shadow: 0 0 0 4px rgba(198, 93, 69, 0.12);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.add-btn {
+    padding: 0 20px;
+    border: none;
+    border-radius: 13px;
+
+    background: #c65d45;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 12px rgba(198, 93, 69, 0.2);
+}
+
+.add-btn:hover {
+    background: #a94733;
+}
+
+
+/* ---------- Task section ---------- */
+
+.tasks-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+
+/* ---------- Individual tasks ---------- */
+
+#alltask {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px;
+    border: 1px solid #f0e3d9;
+    border-radius: 14px;
+
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(89, 56, 47, 0.04);
+
+    animation: appear 0.25s ease;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.task-text.completed {
+    color: #a99a91;
+    text-decoration: line-through;
+}
+
+.task-btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.done-btn {
+    background: #e4f1df;
+    color: #477342;
+}
+
+.done-btn:hover {
+    background: #cfe7c6;
+}
+
+.delete-btn {
+    background: #fce5df;
+    color: #b64f40;
+}
+
+.delete-btn:hover {
+    background: #f7d0c6;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #efe1d7;
+
+    color: #a68a7c;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* ---------- Animation ---------- */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- Mobile responsiveness ---------- */
+
+@media (max-width: 480px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .todo-container {
+        padding: 24px 18px;
+        border-radius: 21px;
+    }
+
+    .task-form {
+        gap: 7px;
+    }
+
+    .task-form input {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .add-btn {
+        padding: 0 13px;
+    }
+
+    .task-item {
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .task-btn {
+        padding: 8px;
+        font-size: 11px;
+    }
+}
+
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Vibrant cozy background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff1df;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 196, 128, 0.8),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 120, 100, 0.7),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(111, 43, 57, 0.9),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #9f3e36,
+            #d96850,
+            #f5a078
+        );
+
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Glowing decorative circles */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(2px);
+}
+
+/* Large soft peach glow */
+body::before {
+    width: 280px;
+    height: 280px;
+    top: 8%;
+    left: -100px;
+
+    background: rgba(255, 221, 174, 0.25);
+    box-shadow:
+        0 0 80px 30px rgba(255, 205, 150, 0.15);
+}
+
+/* Golden glow */
+body::after {
+    width: 350px;
+    height: 350px;
+    right: -130px;
+    bottom: 5%;
+
+    background: rgba(255, 164, 115, 0.22);
+    box-shadow:
+        0 0 100px 40px rgba(255, 185, 125, 0.18);
+}
+
+/* Optional: style your heading */
+h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+    text-shadow: 0 3px 15px rgba(80, 20, 20, 0.2);
+}
+
+/* Optional: style your input */
+input {
+    padding: 12px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    background: rgba(255, 249, 242, 0.95);
+    color: #59382f;
+    outline: none;
+}
+
+input:focus {
+    border-color: #5c3505;
+    box-shadow: 0 0 0 4px rgba(255, 223, 175, 0.25);
+}
+
+/* Optional: style your buttons */
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: #ffe0bd;
+    color: #783b32;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #fff0dc;
+    transform: translateY(-2px);
+}
+
+/* Keep the layout comfortable on mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+
+/* Make task text readable */
+#alltask > div {
+    background-color: #fff8ef;
+    color: #493027;
+    border: 1px solid #e9cbb9;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(80, 30, 20, 0.12);
+}
+
+/* Task description */
+#alltask span {
+    color: #493027;
+    font-weight: 500;
+}
+
+/* Delete button */
+#alltask button:first-of-type {
+    background-color: #f8d8ce;
+    color: #8f302b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Done button */
+#alltask button:last-of-type {
+    background-color: #dcebd5;
+    color: #315c37;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Button hover effects */
+#alltask button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+
+/* Keep completed tasks readable */
+#alltask span[style*="line-through"] {
+    color: #8c625c !important;
+    background-color: transparent !important;
+    text-decoration: line-through;
+}
+
+h1,h2{
+    color:#482c0b;
+}
