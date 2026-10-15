@@ -358,5 +358,79 @@ todo-list/
 
 Made with ❤️ while learning web development.
 
+# 🎯 Project 10:QuizMaster
 
-More mini projects will be added to this repository as I continue learning and improving my web development skills.
+**QuizMaster** is an interactive, browser-based quiz application that tests your general knowledge with randomly selected multiple-choice questions. It features a clean interface, live progress tracking, instant scoring, and a results summary.
+
+## ✨ Features
+
+- 🎲 **Random Questions** — Get 10 randomly selected questions from a bank of 50.
+- 🧠 **General Knowledge** — Test your knowledge across different categories.
+- 📊 **Progress Tracking** — See how many questions you've answered.
+- ✅ **Answer Validation** — Make sure every question is answered before submitting.
+- 🏆 **Instant Results** — View your score, percentage, and correct and incorrect answers.
+- 🔄 **Play Again** — Start a new quiz with a fresh selection of questions.
+- 🎨 **Modern UI** — Enjoy a clean, responsive design with a purple theme.
+- 📱 **Responsive Layout** — Designed to work across different screen sizes.
+
+## 🛠️ Built With
+
+- **HTML5** — Website structure
+- **CSS3** — Styling and responsive layout
+- **JavaScript** — Question selection, quiz logic, progress tracking, and scoring
+
+## 📁 Project Structure
+
+```text
+10project/
+├── index.html
+├── style.css
+├── first.js
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/savneet-23/mini-projects.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd mini-projects/10project
+```
+
+### 3. Run the application
+
+Open `index.html` in your web browser.
+
+No installation or backend server is required.
+
+## 🎮 How to Play
+
+1. Open QuizMaster in your browser.
+2. Answer the 10 randomly selected multiple-choice questions.
+3. Track your progress as you answer.
+4. Submit your answers when all questions are completed.
+5. Review your score and results.
+6. Choose **Try Again** to play another round.
+
+## 🔮 Future Improvements
+
+- Add difficulty levels such as Easy, Medium, and Hard.
+- Include a timer for each quiz.
+- Add a leaderboard and high-score tracking.
+- Expand the question bank with more categories.
+- Add sound effects and animations.
+
+## 👨‍💻 About This Repository
+
+This repository contains my **10 mini-projects**, which I have created as part of my web development learning journey. Through these projects, I have gained practical experience and improved my understanding of HTML, CSS, and JavaScript.
+
+I hope to continue learning, exploring new technologies, and building more projects to enhance my skills in the future. 🚀
+
+⭐ If you like this project, consider giving the repository a star!
+
