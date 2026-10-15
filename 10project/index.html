@@ -1,85 +1,125 @@
-```html
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Quiz Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - General Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="first.js" defer></script>
 </head>
 <body>
+    <header class="header">
+        <a class="logo" href="#">Quiz<span>Master</span></a>
+        <span class="header-label">GENERAL KNOWLEDGE</span>
+    </header>
 
-    <h1>General Knowledge Quiz</h1>
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">READY FOR A CHALLENGE?</p>
+            <h1>Test Your <span>Knowledge.</span></h1>
+            <p class="intro-text">
+                Answer 10 random questions selected from our bank of 50.
+                Every new round brings a different challenge.
+            </p>
 
-    <form>
+            <div class="info-row">
+                <div class="info">
+                    <strong>10</strong>
+                    <span>Questions per quiz</span>
+                </div>
+                <div class="info">
+                    <strong>50</strong>
+                    <span>Questions in bank</span>
+                </div>
+                <div class="info">
+                    <strong>100%</strong>
+                    <span>Perfect score</span>
+                </div>
+            </div>
+        </section>
 
-        <p>1. What is the capital of France?</p>
+        <section class="quiz-card" id="quizCard">
+            <div class="quiz-heading">
+                <div>
+                    <p class="eyebrow">YOUR CHALLENGE</p>
+                    <h2>General Knowledge Quiz</h2>
+                </div>
+                <span class="pill" id="questionCount">10 Questions</span>
+            </div>
 
-        <label>
-            <input type="radio" name="q1" value="Paris">
-            Paris
-        </label><br>
+            <div class="progress-area">
+                <div class="progress-labels">
+                    <span>YOUR PROGRESS</span>
+                    <span id="progressText">0 of 10 answered</span>
+                </div>
+                <div
+                    class="progress-track"
+                    id="progressTrack"
+                    role="progressbar"
+                    aria-label="Quiz progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                >
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
 
-        <label>
-            <input type="radio" name="q1" value="London">
-            London
-        </label><br>
+            <form id="quizForm" novalidate>
+                <div id="questionsContainer"></div>
 
-        <label>
-            <input type="radio" name="q1" value="Rome">
-            Rome
-        </label><br>
+                <p id="errorMessage" class="error hidden" role="alert">
+                    Please answer all 10 questions before submitting.
+                </p>
 
-        <label>
-            <input type="radio" name="q1" value="Berlin">
-            Berlin
-        </label>
+                <div class="button-row">
+                    <button type="button" id="resetButton" class="button button-light">
+                        New Quiz
+                    </button>
+                    <button type="submit" id="submitButton" class="button button-primary">
+                        Submit Answers →
+                    </button>
+                </div>
+            </form>
+        </section>
 
+        <section class="result-card hidden" id="resultCard" aria-live="polite">
+            <div class="result-icon" id="resultIcon">🏆</div>
+            <p class="eyebrow">QUIZ COMPLETED</p>
+            <h2 id="resultTitle">Well done!</h2>
+            <p id="resultMessage" class="result-message">
+                Here are your results.
+            </p>
 
-        <p>2. Which are programming languages?</p>
+            <div class="score-circle">
+                <strong id="scoreNumber">0/10</strong>
+                <span>Your Score</span>
+            </div>
 
-        <label>
-            <input type="checkbox" name="q2" value="JavaScript">
-            JavaScript
-        </label><br>
+            <div class="result-stats">
+                <div class="stat">
+                    <strong id="percentage">0%</strong>
+                    <span>Percentage</span>
+                </div>
+                <div class="stat">
+                    <strong id="correctCount">0</strong>
+                    <span>Correct</span>
+                </div>
+                <div class="stat">
+                    <strong id="incorrectCount">0</strong>
+                    <span>Incorrect</span>
+                </div>
+            </div>
 
-        <label>
-            <input type="checkbox" name="q2" value="Python">
-            Python
-        </label><br>
+            <button type="button" id="tryAgainButton" class="button button-primary">
+                Try Another Quiz ↻
+            </button>
+        </section>
 
-        <label>
-            <input type="checkbox" name="q2" value="HTML">
-            HTML
-        </label><br>
-
-        <label>
-            <input type="checkbox" name="q2" value="Java">
-            Java
-        </label>
-
-
-        <p>3. What does HTML stand for?</p>
-
-        <input type="text" name="q3">
-
-
-        <p>4. What is 10 + 5?</p>
-
-        <select name="q4">
-            <option value="">Choose an answer</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-        </select>
-
-
-        <br><br>
-
-        <button type="submit">Submit Quiz</button>
-        <button type="reset">Reset</button>
-
-    </form>
-
+        <footer class="footer">
+            Keep learning. Keep growing. Keep challenging yourself.
+        </footer>
+    </main>
 </body>
-<script src="first.js"></script>
 </html>
-
